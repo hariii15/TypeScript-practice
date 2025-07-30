@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+    "name": "Node.js & TypeScript (React/Vite)", // Changed name for clarity
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm", // Your chosen Node.js version
+
+    "features": {},
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // Vite's default development server port is 5173.
+    "forwardPorts": [5173],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "npm install",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+                // No TSLint if you're using React's default setup with ESLint
+            ]
+        }
+    }
+}
